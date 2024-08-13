@@ -16,7 +16,7 @@
 
 ```php
 
-wget -q https://raw.githubusercontent.com/ahmad-chebbo/ubuntu-lemp/main/laravel_setup.sh -O script.sh ; sudo chmod +x laravel_setup.sh ; ./laravel_setup.sh -d example.com
+wget -q https://raw.githubusercontent.com/ahmad-chebbo/setup-larave/main/laravel_setup.sh -O script.sh ; sudo chmod +x laravel_setup.sh ; ./laravel_setup.sh -d example.com
 # Replace example.com with your domain
 ```
 ### 
