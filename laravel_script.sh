@@ -26,16 +26,16 @@ sudo apt-get update >> $script_log_file 2>/dev/null
 sudo apt-get install -y git unzip nginx php-fpm php-mysql mysql-server ufw certbot python3-certbot-nginx >> $script_log_file 2>/dev/null
 
 # Install Composer
-# if ! [ -x "$(command -v composer)" ]; then
-#     log "${no_color}INSTALLING COMPOSER"
-#     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" >> $script_log_file 2>/dev/null
-#     php composer-setup.php >> $script_log_file 2>/dev/null
-#     sudo mv composer.phar /usr/local/bin/composer >> $script_log_file 2>/dev/null
-#     log $green_color"[SUCCESS]"
-#     log $green_color"[######################################]"
-# else
-#     log "${green_color}COMPOSER ALREADY INSTALLED!"
-# fi
+if ! [ -x "$(command -v composer)" ]; then
+    log "${no_color}INSTALLING COMPOSER"
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" >> $script_log_file 2>/dev/null
+    php composer-setup.php >> $script_log_file 2>/dev/null
+    sudo mv composer.phar /usr/local/bin/composer >> $script_log_file 2>/dev/null
+    log $green_color"[SUCCESS]"
+    log $green_color"[######################################]"
+else
+    log "${green_color}COMPOSER ALREADY INSTALLED!"
+fi
 
 # Clone repository
 log "${no_color}CLONING REPOSITORY"
